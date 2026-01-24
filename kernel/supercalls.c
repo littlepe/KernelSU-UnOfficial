@@ -685,7 +685,7 @@ int ksu_handle_sys_reboot(int magic1, int magic2, unsigned int cmd,
 			  void __user **arg)
 {
 	if (magic1 != KSU_INSTALL_MAGIC1)
-		return 0;
+		return -EINVAL;
 
 	// Rare case that unlikely to happen
 	if (unlikely(!arg))
